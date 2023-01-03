@@ -56,5 +56,54 @@ array1 = [74, 75, 76, 77, 78]
 countPrimes(arr: array1)
 
 
+/*
+ Return n Fibonacci numbers
+ */
+func fibonacciNumbers(_ n: Int) -> [Int]{
+    if n == 1 {
+        return [1]
+    } else if n == 2 {
+        return [1, 2]
+    } else {
+        var result: [Int] = [1, 2]
+        for i in 2...(n-1) {
+            let antAnt = result[i - 2]
+            let ant = result[i - 1]
+            result.append(antAnt + ant)
+        }
+        return result
+    }
+}
+
+// Tests cases
+fibonacciNumbers(1)
+fibonacciNumbers(2)
+fibonacciNumbers(10)
 
 
+/*
+ Determine if a word is palindrome
+ */
+func isPalindrome(_ word: String) -> Bool {
+    var i = 0
+    var j = word.count - 1
+    while i < j {
+        var firstIndex = word.index(word.startIndex, offsetBy: i)
+        var lastIndex = word.index(word.startIndex, offsetBy: j)
+        
+        if word[firstIndex] != word[lastIndex] {
+            return false
+        }
+        
+        i = i + 1
+        j = j - 1
+    }
+    
+    return true
+}
+
+// Tests cases
+isPalindrome("test")
+isPalindrome("somos")
+isPalindrome("pepito")
+isPalindrome("añoralaroña")
