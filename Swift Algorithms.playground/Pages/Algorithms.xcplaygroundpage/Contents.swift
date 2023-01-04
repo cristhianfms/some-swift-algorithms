@@ -110,7 +110,7 @@ isPalindrome("añoralaroña")
 
 
 /*
- Sum digits of a factorial of a number
+ Sum digits of the factorial of a number
  */
 func sumFactorialDigits(_ n: Int) -> Int {
     let factorial = calculateFactorial(n)
