@@ -107,3 +107,42 @@ isPalindrome("test")
 isPalindrome("somos")
 isPalindrome("pepito")
 isPalindrome("añoralaroña")
+
+
+/*
+ Sum digits of a factorial of a number
+ */
+func sumFactorialDigits(_ n: Int) -> Int {
+    let factorial = calculateFactorial(n)
+    let sumDigits = calculateSumDigits(factorial)
+    
+    return sumDigits
+}
+
+func calculateFactorial(_ n: Int) -> Int {
+    var factorial:Int = 1
+    
+    for i in 1...n {
+        factorial *= i
+    }
+    
+    return factorial
+}
+
+func calculateSumDigits( _ n: Int) -> Int {
+    var sum: Int = 0
+    var result: Int = n
+    
+    repeat {
+        let rest = result % 10
+        result = result / 10
+        sum += rest
+    } while result > 0
+    
+    return sum
+}
+
+// Tests caess
+sumFactorialDigits(5)
+sumFactorialDigits(6)
+sumFactorialDigits(9)
