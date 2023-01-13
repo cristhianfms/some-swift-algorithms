@@ -105,7 +105,6 @@ func isPalindrome(_ word: String) -> Bool {
 // Tests cases
 isPalindrome("test")
 isPalindrome("somos")
-isPalindrome("pepito")
 isPalindrome("añoralaroña")
 
 
@@ -146,3 +145,46 @@ func calculateSumDigits( _ n: Int) -> Int {
 sumFactorialDigits(5)
 sumFactorialDigits(6)
 sumFactorialDigits(9)
+
+
+
+/*
+ Create a set of n prime numbers (3 numbers minimum) and also another set with only 3 elements in common
+ */
+func createPrimeSet(lenght: Int) -> Set<Int> {
+    guard lenght >= 3 else {return [1, 2, 3]}
+    
+    var result : Set<Int> = []
+    
+    repeat {
+        let number = Int.random(in: 0...1000)
+        
+        if isPrime(num: number) {
+            result.insert(number)
+        }
+        
+    } while result.count < lenght
+    
+    return result
+}
+
+// Precondition: elements has at least 3 elements
+func createArrayWith3CommonElements(elements: Set<Int>, length: Int) -> Set<Int> {
+    var result : Set<Int> = []
+    var elementsInCommon = 0
+    repeat {
+        let number = Int.random(in: 0...1000)
+        result.insert(number)
+        if (elements.contains(number)) {
+            elementsInCommon += 1
+        }
+        
+    } while elementsInCommon < 3
+    
+    return result
+}
+
+
+var setA = createPrimeSet(lenght: 10)
+var setB = createArrayWith3CommonElements(elements: setA, length: 10)
+

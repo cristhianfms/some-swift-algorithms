@@ -6,3 +6,4 @@ Some swift algorithms in xcode playgrounds
 - Determine if a word is palindrome
 - Return n Fibonacci numbers
 - Sum digits of the factorial of a number
+- Create a set of prime random numbers and another array with only three primes in common
