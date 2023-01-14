@@ -188,3 +188,73 @@ func createArrayWith3CommonElements(elements: Set<Int>, length: Int) -> Set<Int>
 var setA = createPrimeSet(lenght: 10)
 var setB = createArrayWith3CommonElements(elements: setA, length: 10)
 
+
+/*
+ Sum all numbers of an array
+ */
+func sum(_ array:[Int]) -> Int {
+    var res:Int = 0
+    for i in array {
+        res += i
+    }
+    
+    return res
+}
+
+// Test cases
+var array2 : [Int] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+sum(array2)
+
+
+
+/*
+ Create an array with random numbers and filter only prime numbers
+ */
+func createArray(lenght:Int) -> [Int] {
+    var array:[Int] = Array<Int>()
+    
+    for _ in 1...100 {
+        array.append(Int.random(in: 1...100))
+    }
+    
+    return array
+}
+
+func filterPrimes(array:[Int]) -> [Int] {
+    var primes:[Int] = []
+    for i in array {
+        if isPrime(num: i) {
+            primes.append(i)
+        }
+    }
+    return primes
+}
+
+// Test cases
+let randomArray = createArray(lenght: 100)
+let primes = filterPrimes(array: randomArray)
+
+
+
+/*
+ Arithmetic average of numbers in array
+ */
+func calcArithmeticAverage(array:[Int]) -> Double {
+    var sum:Int = 0
+    for i in array {
+        sum += i
+    }
+    
+    let res:Double = Double(sum) / Double(array.count)
+    
+    return res
+}
+
+// Test cases
+calcArithmeticAverage(array: [1, 2, 3, 4, 5, 6, 7, 99, 98, 77])
+
+
+/*
+ Create a diccionary that stores products and prices per kg.
+ Create a function that receives a product and a weigth in kg and returns the price
+ */
