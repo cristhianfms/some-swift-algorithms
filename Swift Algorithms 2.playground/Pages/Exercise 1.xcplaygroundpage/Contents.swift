@@ -1,7 +1,9 @@
 import Foundation
 
-/*Exercise 1:
- Create an array with 50 random integers. From it, create a response string that includes any prime numbers found in the array. The result should be a string similar to: "The random prime numbers in this list are x, x, x, x, x".*/
+/**
+ Exercise 1:
+ Create an array with 50 random integers. From it, create a response string that includes any prime numbers found in the array. The result should be a string similar to: "The random prime numbers in this list are x, x, x, x, x".
+ */
 
 func isPrime(num: Int) -> Bool{
     if num <= 3 {
